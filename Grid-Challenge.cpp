@@ -13,7 +13,8 @@ string rtrim(const string &);
  */
 
 string gridChallenge(vector<string> grid) {
-
+    std::string result{"YES"}
+    return result;
 }
 
 int main()
