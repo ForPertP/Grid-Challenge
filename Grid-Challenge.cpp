@@ -12,9 +12,25 @@ string rtrim(const string &);
  * The function accepts STRING_ARRAY grid as parameter.
  */
 
-string gridChallenge(vector<string> grid) {
-    std::string result{"YES"}
-    return result;
+string gridChallenge(vector<string> grid)
+{
+    for (int i = 0; i < grid.size(); ++i)
+    {
+        std::sort(grid[i].begin(), grid[i].end());
+    }
+    
+    for(int i = 0; i < grid.size(); ++i)
+    {
+        for (int j = 0; j < grid.size()-1; ++j)
+        {
+            if ((int)grid[j][i] > (int)grid[j+1][i])
+            {
+                return "NO";
+            }
+        }
+    }
+
+    return "YES";
 }
 
 int main()
@@ -72,4 +88,3 @@ string rtrim(const string &str) {
 
     return s;
 }
-
