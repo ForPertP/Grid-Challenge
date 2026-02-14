@@ -14,6 +14,22 @@ string rtrim(const string &);
 
 string gridChallenge(vector<string> grid)
 {
+    for (auto& row : grid)
+        sort(row.begin(), row.end());
+
+    const size_t rows = grid.size();
+    const size_t cols = grid[0].size();
+
+    for (size_t col = 0; col < cols; ++col)
+        for (size_t row = 1; row < rows; ++row)
+            if (grid[row][col] < grid[row - 1][col])
+                return "NO";
+
+    return "YES";
+}
+
+string gridChallenge(vector<string> grid)
+{
     for (int i = 0; i < grid.size(); ++i)
     {
         std::sort(grid[i].begin(), grid[i].end());
