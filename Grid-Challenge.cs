@@ -35,18 +35,9 @@ class Result
         }
 
         for (int col = 0; col < cols; col++)
-        {
-            char prev = grid[0][col];
-
             for (int row = 1; row < rows; row++)
-            {
-                char current = grid[row][col];
-                if (current < prev)
+                if (grid[row][col] < grid[row - 1][col])
                     return "NO";
-
-                prev = current;
-            }
-        }
 
         return "YES";
     }    
